@@ -16,7 +16,12 @@ pipeline {
         stage('Compile') {
             steps {
                 sh 'mvn compile'
-                echo "GITHUB Webhook Configured"
+                echo 'GITHUB Webhook Configured'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
             }
         }
     }
