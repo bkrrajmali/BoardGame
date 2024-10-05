@@ -55,7 +55,6 @@ pipeline {
                     sh 'mvn deploy -X'
                 }
             }
-            
         }
     }
 }
