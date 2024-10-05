@@ -46,7 +46,9 @@ pipeline {
         }
         stage('Build') {
             steps {
+                sh 'mvn clean deploy'
                 sh 'mvn package'
+                
             }
         }
         stage('Publish To Nexus') {
