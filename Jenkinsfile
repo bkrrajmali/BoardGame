@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/Rezowanur-Rahman-Robin/BoardGame.git'
+                git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/bkrrajmali/BoardGame.git'
             }
         }
     }
