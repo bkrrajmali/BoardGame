@@ -1,26 +1,16 @@
-pipeline {    
-    agent any 
+pipeline {
+    agent any
     tools {
         jdk 'jdk17'
         maven 'maven3'
     }
-
-    stages {   
-        stage('Compile') {
+    environment {
+        SCANNER_HOME = tool 'sonar-scanner'
+    }
+    stages {
+        stage('Git Checkout') {
             steps {
-                sh 'mvn compile'
-            }
-        }
-        
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-        
-        stage('Build') {
-            steps {
-                sh 'mvn package'
+                git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/Rezowanur-Rahman-Robin/BoardGame.git'
             }
         }
     }
