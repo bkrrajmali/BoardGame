@@ -56,5 +56,14 @@ pipeline {
                 }
             }
         }
+        stage('Build & Tag Docker Image') {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                        sh 'docker build -t bkrrajmali/boardshack:latest .'
+                    }
+                }
+            }
+        }
     }
 }
