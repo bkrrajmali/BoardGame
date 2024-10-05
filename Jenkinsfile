@@ -13,5 +13,10 @@ pipeline {
                 git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/bkrrajmali/BoardGame.git'
             }
         }
+        stage('Compile') {
+            steps {
+                sh 'mvn compile'
+            }
+        }
     }
 }
