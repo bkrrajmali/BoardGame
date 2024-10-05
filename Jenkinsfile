@@ -16,6 +16,7 @@ pipeline {
         stage('Compile') {
             steps {
                 sh 'mvn compile'
+                echo "GITHUB Webhook Configured"
             }
         }
     }
